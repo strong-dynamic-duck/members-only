@@ -1,0 +1,18 @@
+<p style="color: green"><%= notice %></p>
+
+<% if user_signed_in? %>
+  <p>Hello, <%= @user.email %>!</p>
+  <%= button_to "Logout", destroy_user_session_path, method: :delete %>
+<% else %>
+  <%= link_to "Login", new_user_session_path %>
+<% end %>
+
+<h1>Posts</h1>
+
+<div id="posts">
+  <% @posts.each do |post| %>
+    <%= render post %>
+  <% end %>
+</div>
+
+<%= link_to "New post", new_post_path %>

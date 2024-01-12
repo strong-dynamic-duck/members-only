@@ -1,0 +1,18 @@
+<div id="<%= dom_id post %>">
+  <p>
+    <strong>Title:</strong>
+    <%= post.title %>
+  </p>
+
+  <p>
+    <strong>Text:</strong>
+    <%= post.text %>
+  </p>
+
+  <% if user_signed_in? %>
+    <p>
+      <strong>Author ID:</strong>
+      <%= post.user_id %>
+    </p>
+  <% end %>
+</div>
